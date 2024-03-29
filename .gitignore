@@ -1,0 +1,16 @@
+# .gitignore
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore virtual environment directory
+venv/
+
+# Ignore environment variables file
+.env
+
+# Ignore .idea/
+.idea/
+
+.DS_STORE
