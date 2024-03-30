@@ -6,6 +6,7 @@ load_dotenv()
 
 
 class ConfigVars:
+    secret_key: str = getenv('APP_SECRET_KEY')
     service_name: str = getenv('APP_NAME', 'The Project')
     debug: bool = getenv('APP_DEBUG', 'FALSE').upper() == 'TRUE'
 
