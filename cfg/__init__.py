@@ -11,3 +11,16 @@ class ConfigVars:
 
     host: str = '0.0.0.0'
     port: int = 4000
+
+    __db_host: str = getenv('APP_DB_HOST', 'localhost')
+    __db_port: int = getenv('APP_DB_PORT')
+    __db_name: int = getenv('APP_DB_NAME', 'postgres')
+    __db_user: str = getenv('APP_DB_USER', 'postgres')
+    __db_pass: str = getenv('APP_DB_PASS', 'root')
+
+    db_conn_str: str = (
+        f"postgresql://{__db_user}:{__db_pass}@{__db_host}"
+        f"{f':{__db_port}' if __db_port else ''}"
+        f"/{__db_name}"
+    )
+
